@@ -1,0 +1,34 @@
+{% extends 'search.html' %}
+{% block content %}
+<br />  
+<br />  
+<br />  
+<br />  
+<br />  
+<div align="center">
+<center><b>Results:</b></center>
+{%if records:%}
+      <table style="width:80%">
+        <tr>
+          <th><center>Photo</center></th>
+          <th><center>Name</center></th>
+          <th><center>Address</center></th> 
+          <th><center>City</center></th>
+          <th><center>Contact</center><th>
+        </tr>  
+{%for entry in records:%}
+      <tr>
+          <td><center><img src={{entry[8]}}></center></td>
+          <td><center>{{entry[1] + " " + entry[2]}}</center></td>
+          <td><center>{{entry[5]}}</center></td> 
+          <td><center>{{entry[6]}}</center></td>
+          <td><center><a href=mailto:{{entry[3]}}>Contact</a></center><td>
+      </tr>
+{%endfor%}
+</table>
+{%else:%}
+<h3>Sorry, no results :(</h3>
+<a href="/search">Try again</a>  
+{%endif%}
+</div>  
+{% endblock %}

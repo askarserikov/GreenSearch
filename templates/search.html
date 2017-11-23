@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="search">
+<form action="/search" method=post>
+    Name: <input type=text name=name value="{{ request.form.name}}"></br>
+    Address: <input type=text name=address value="{{ request.form.address}}"></br>
+    City: <input type=text name=city value="{{ request.form.city}}"></br>
+    Specialty: <input type=text name=specialty value="{{ request.form.specialty}}"></br>
+    <div class="actions"><input type=submit value="Search!"></div>
+</form>
+</div>
+{% endblock %}
